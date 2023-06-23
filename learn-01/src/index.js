@@ -1,1 +1,3 @@
-console.log('This is a greeting from Lee');
+import './vendors';
+import(/* webpackChunkName: "async" */ './async');
+console.log('I am from index.js');
