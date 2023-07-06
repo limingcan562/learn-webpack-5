@@ -20,8 +20,11 @@ module.exports = {
                 type: 'asset',
                 parser: {
                     dataUrlCondition: {
-                      maxSize: 1024 * 10
+                      maxSize: 1024 * 10 // When the image size is < 10kb it will be converted to base64
                     }
+                },
+                generator: {
+                    filename: '[name][ext]' // Set the name of the output file
                 }
             }
         ]
