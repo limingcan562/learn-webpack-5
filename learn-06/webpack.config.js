@@ -8,7 +8,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: './js/[name]-[chunkhash:5].js',
-        assetModuleFilename: './img/[name][ext]',
         clean: true
     },
     

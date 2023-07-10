@@ -4,3 +4,4 @@
 3. learn-03：编译`less`、`css`文件
 4. learn-04：编译`img`文件
 5. learn-05：编译`js`文件（编译`es6+`）
+6. learn-06：编译`html`文件
