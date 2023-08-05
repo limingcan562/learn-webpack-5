@@ -7,7 +7,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: './js/[name]-[chunkhash:5].js',
+        filename: '[name]-[chunkhash:5].js',
         clean: true
     },
 
