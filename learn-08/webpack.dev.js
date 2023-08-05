@@ -10,7 +10,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name]-[chunkhash:5].js',
-        clean: true
     },
     module: {
         rules: [
