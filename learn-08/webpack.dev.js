@@ -3,12 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
+    devtool: 'inline-cheap-module-source-map',
     entry: {
         index: './src/index.js'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name]-[chunkhash:5].js',
+        clean: true
     },
     module: {
         rules: [
@@ -23,14 +25,14 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset',
-                generator: {
-                    filename: '[name]-[hash:5][ext]' // Set the name of the output file
-                },
                 parser: {
                     dataUrlCondition: {
-                        maxSize: 1024 * 10 // When the image size is < 10kb it will be converted to base64
+                        maxSize: 1024 * 3 // When the image size is < 3kb it will be converted to base64
                     }
                 },
+                generator: {
+                    filename: '[name]-[contenthash:5][ext][query]' // Set the name of the output file
+                }
             },
             {
                 test: /\.m?js$/,
@@ -49,6 +51,8 @@ module.exports = {
         })
     ],
     devServer: {
-        static:  './static',
+        static: {
+            directory: path.join(__dirname, 'static'),
+        },
     },
 }

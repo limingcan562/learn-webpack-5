@@ -1,20 +1,16 @@
-import './assets/index.less';
+import './assets/style/index.less';
 
-class People {
-    constructor(name) {
-        this.name = name;
-    }
+const loadImage = src => {
+    return new Promise(r => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => r(img);
+    })
+};
 
-    sayHi() {
-        return Promise.resolve(this.name);
-    }
-    
-    setLogo() {
-        const img = document.querySelector('#logo');
-        img.src = './lMC.png';
-    }
-}
 
-const Lee = new People('Lee');
-Lee.sayHi().then(name => console.log(`Hi, I am ${name}.`));
-Lee.setLogo();
+loadImage('./logo.png').then(img => {
+    console.log('I am from index.js');
+    img.width = 120;
+    document.querySelector('#js_content .img_content').append(img);
+});

@@ -7,10 +7,22 @@
 </head>
 <body>
     <div class="containter">
-        <img id="logo" class="logo" alt="logo">
-        <img src="<%= require('./assets/ecj-cli.png') %>" alt="">
-        <a target="_blank" href="https://github.com/limingcan562/ejc-cli">Manage your json data better with visual Excel sheets</a>
+        <div class="less_content content">
+            <p>I am from <span class="from">index.less:</span></p>
+            <div class="bg"></div>
+            <a target="_blank" href="https://github.com/limingcan562/ejc-cli">Manage your json data better with visual Excel sheets</a>
+        </div>
+
+        <div class="html_content content">
+            <p>I am from  <span class="from">index.html:</span></p>
+            <img src="<%= require('./assets/img/ecj-cli.png') %>" width="401">
+            <a target="_blank" href="https://github.com/limingcan562/ejc-cli">Manage your json data better with visual Excel sheets</a>
+        </div>
+        
+        <div class="js_content content" id="js_content">
+            <p>I am from  <span class="from">index.js:</span></p>
+            <div class="img_content"></div>
+        </div>
     </div>
-    
 </body>
 </html>
