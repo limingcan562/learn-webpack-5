@@ -30,7 +30,7 @@ module.exports = {
                     }
                 },
                 generator: {
-                    filename: '[name]-[hash:5][ext]' // Set the name of the output file
+                    filename: '[name]-[hash:5][ext][query]' // Set the name of the output file
                 }
             },
             {
